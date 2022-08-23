@@ -4,27 +4,28 @@
 
         ESP32 development board
         2 Tact switch
+        3 LEDS: read, yellow, green
+        3 pullup resistors 220 ohm
         Jumper wire
-        Filter capacitor
 
 ##      Connections
 
-        From GND and from 3V3 on ESP32 development board to both negative (blue) and positive rails of one side
+        From GND from ESP32 development board to both negative (blue) rails on both sides
 
-        From GPIO18 to one side of Tact switch 0
-        From the other side of Tact switch to positive (red) rail
-        From GPIO19 to one side of Tact switch 1
-        From the other side of Tact switch to positive (red) rail
-
-        Between both power supply rails (red and blue, a capacitor in order to filter 3V3 power supply
+        Cathode of each LED is connected to GND, anode to one side of pullup resistor and
+            the other side of pullup resistor to respectivve IO
+        NS_RED, NS_YELLOW and NS_GREEN are connected to each color circuit LED
+        
+        Tact switches are connected on one side to GND and other side to respective GPIO
+            i.e., PUSH_NS and PUSH_EW
 
 ##      Photos
 
         Project in protoboard
-        https://photos.app.goo.gl/bDDNQksvXqVrJpd76
+        https://photos.app.goo.gl/Q9wkjuD1xwUeYZEc9
 
 ##      Video
 
         Project in action
-        https://photos.app.goo.gl/VWw6pCZ16sRMsRsZ9
+        https://photos.app.goo.gl/FMERasPUwjoPMYm2A
 

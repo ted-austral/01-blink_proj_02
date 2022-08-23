@@ -4,10 +4,16 @@
  *  Project 01-blink_proj_02
  *      IntroCom - Austral - 2022 - EAM
  * 
- *      Each "sample' time, reads both pushbuttons as an integer number named "num"
- *      After reading, prints num in serial monitor and blinks LED num+1 number of periods of "pulse" time on and off
- *      Tact switch connected to +VDD so must engage pulldown resistor, subsequents reads gives a HIGH for a push botton closed
  *      Austral 2022 - IntroCom - EAM
+ * 
+ *      Traffic light project
+ *      Manages an intersection NS and EW; both traffic lights are
+ *      complementary, i.e., when one is read the other is green and viceversa
+ *      Also, there are two tact switches that simulates cars waiting in each
+ *      one of the intersections, named "PUSH_NS" and "PUSH_EW"
+ *      As a first intent, only sequences traffic light with "ON_TIME" for
+ *      red and green and "Y_TIME" for yellow; also, only shows in serial monitor
+ *      tact switch states
  */
 
 #define SizeOf(x)   (sizeof(x)/sizeof(*x))
@@ -31,6 +37,13 @@ static tlight_t traffic_lights[NUM_LIGHTS] =
 };
 
 static void
+read_switches(void)
+{
+    Serial.printf("NS = %d, EW = %d\n\r",
+        digitalRead(PUSH_NS), digitalRead(PUSH_EW) );
+}
+
+static void
 set_light( int x )
 {
     digitalWrite( traffic_lights[x].light, HIGH );
@@ -40,6 +53,7 @@ set_light( int x )
 static void
 clr_light( int x )
 {
+    read_switches();
     digitalWrite( traffic_lights[x].light, LOW );
 }
 
