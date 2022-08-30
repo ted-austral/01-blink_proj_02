@@ -1,4 +1,4 @@
-# Project 01-blink_proj_01
+# Project 01-blink_proj_02
 
 ##  Austral 2022 - Introduccion a la computacion 
     

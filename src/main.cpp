@@ -62,6 +62,7 @@ setup(void)
 {
     int i;
 
+    Serial.begin(BAUD);
     for( i = 0; i < NUM_LIGHTS; ++i )
     {
         pinMode( traffic_lights[i].light, OUTPUT );
@@ -69,7 +70,6 @@ setup(void)
     }
     pinMode( PUSH_NS, INPUT_PULLUP );
     pinMode( PUSH_EW, INPUT_PULLUP );
-    Serial.begin(BAUD);
 
     set_light(0);
 }

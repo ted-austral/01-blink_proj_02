@@ -1,4 +1,7 @@
-#       Project 01-blink_project_01
+#       Project 01-blink_project_02
+
+        Simulation of a traffic light in an intersection NS - EW
+        Each tact switch tries to simulate cars arriving in each direction
 
 ##      Hardware
 
